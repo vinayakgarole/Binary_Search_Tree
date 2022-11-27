@@ -2,6 +2,8 @@ package com.bridgelabz;
 
 public class BinaryTree {
 
+    int size = 0;
+
     public Node insert(Node root, int value) {
 
         if (root == null) {
@@ -22,13 +24,12 @@ public class BinaryTree {
         return root;
     }
 
-    public Node createNewNode(int a) {
-        Node bst = new Node();
-        bst.data = a;
-        bst.left = null;
-        bst.right = null;
-        return bst;
+    public Node createNewNode(int data) {
+        Node node = new Node(data);
+        size += 1;
+        return node;
     }
+
 
     public void print(Node root) {
 
@@ -38,5 +39,9 @@ public class BinaryTree {
         print(root.left);
         System.out.println(root.data);
         print(root.right);
+    }
+
+    public int size() {
+        return size;
     }
 }
